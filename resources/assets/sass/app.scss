@@ -1,0 +1,72 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.jobs {
+	padding: 0;
+	margin: 0;
+
+	li {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(6, minmax(0,1fr));
+		grid-gap: 10px;
+		padding: 1rem 0;
+		border-bottom: 1px solid darken(#ffffff,5%);
+	}
+
+	&__title {
+		grid-column: auto / span 2;
+	}
+
+	&__edit {
+		text-align: right;
+	}
+}
+
+.admin {
+
+	&__applications {
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+			display: flex;
+			padding: 1rem 0;
+			border-bottom: 1px solid darken(#ffffff,5%);
+		}
+	}
+}
+
+.user {
+
+	&__jobs {
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+			display: grid;
+			grid-template-columns: repeat(6, minmax(0,1fr));
+			grid-gap: 10px;
+			padding: 1rem 0;
+			border-bottom: 1px solid darken(#ffffff,5%);
+		}
+
+		&__title {
+			grid-column: auto / span 3;
+		}
+
+		&__view {
+			text-align: right;
+		}
+	}
+}
