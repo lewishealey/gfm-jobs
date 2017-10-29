@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 use App\Application;
 use Carbon\Carbon;
@@ -35,11 +36,12 @@ class ApplicationController extends Controller
         $application->email = $request->email;
         $application->hear = $request->hear;
         $application->post_id = $request->post_id;
+
 		
-		    if (request()->hasFile('cv')) {
-          $cv_file = $request->file('cv');
-          $path = $request->file('cv')->store('files');
-          $application->cv = $path;
+		if (request()->hasFile('cv')) {
+          $filename = $request->file('cv')->getClientOriginalName();
+          Storage::put($filename, $request->file('cv'));
+          $application->cv = $filename;
         }
 
         if($application->save()) {

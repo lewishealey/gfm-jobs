@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);@charset "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8350,6 +8350,53 @@ button.close {
   }
 }
 
+body,
+html {
+  font-family: "Open Sans", Helvetica, Sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: #282829;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.75rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+p {
+  color: #4D4D4D;
+  font-size: 1rem;
+}
+
 .jobs {
   padding: 0;
   margin: 0;
@@ -8386,6 +8433,59 @@ button.close {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.user__title {
+  line-height: 1;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.user__title svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user__job__title {
+  margin: 4rem 0 0 0;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.user__job__salary {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.user__job__apply {
+  padding: 2rem;
+  background: white;
+  margin-top: 4rem;
+}
+
+.user__job__apply-title {
+  margin: 0 0 2rem 0;
+}
+
+.user__job__apply--top {
+  margin-top: 2rem;
+}
+
+.user__job__description {
+  margin-top: 4rem;
+}
+
+.user__job__info {
+  display: block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.user__job__info i {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
+  line-height: 1;
+}
+
 .user__jobs {
   padding: 0;
   margin: 0;
@@ -8393,11 +8493,30 @@ button.close {
 
 .user__jobs li {
   list-style: none;
+}
+
+.user__jobs li a {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-gap: 10px;
-  padding: 1rem 0;
-  border-bottom: 1px solid #f2f2f2;
+  padding: 1rem 0 1rem 2rem;
+  border-bottom: 1px solid #e6e5e5;
+  position: relative;
+  color: #4D4D4D;
+}
+
+.user__jobs li a:hover {
+  background: white;
+  text-decoration: none;
+}
+
+.user__jobs li a:before {
+  font-family: 'Material Icons';
+  content: "\E40C";
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  color: #FA9A14;
 }
 
 .user__jobs__title {
@@ -8406,5 +8525,121 @@ button.close {
 
 .user__jobs__view {
   text-align: right;
+}
+
+.user__jobs__apply {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.user__jobs__apply i {
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.25rem;
+  color: #FA9A14 !important;
+  margin-left: 0.5rem;
+}
+
+.user__jobs--header {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-gap: 10px;
+  padding: 1rem 0 1rem 2rem;
+  border-bottom: 1px solid #e6e5e5;
+  position: relative;
+  color: #4D4D4D;
+}
+
+.header__logo {
+  margin-top: 1rem;
+}
+
+.footer {
+  background: #282829;
+  color: white;
+  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+.footer h4 {
+  color: white;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.footer__links {
+  padding: 0;
+}
+
+@media (min-width: 320px) {
+  .footer__links {
+    margin: 0 0 3rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__links {
+    margin: 0;
+  }
+}
+
+.footer__links li {
+  list-style: none;
+}
+
+.footer__links li a {
+  color: #BEBEC2;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.footer__links li a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer__copyright {
+  width: 100%;
+  margin-top: 2rem;
+  border-top: 1px solid #666666;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: #BEBEC2;
+}
+
+.btn-default {
+  font-family: 'Open Sans', sans-serif;
+  background: #FA9A14;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+  border: 0;
+  outline: 0;
+  background: #FA9A14;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8213), to(#FA9A14));
+  background: linear-gradient(to bottom, #EB8213 0%, #FA9A14 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$gfm-brand-dark, endColorstr=$gfm-brand,GradientType=0 );
+  /* IE6-9 */
+}
+
+.btn-default:hover {
+  color: white;
+}
+
+.navbar-default {
+  padding: 1rem 0;
+  border: none;
 }
 

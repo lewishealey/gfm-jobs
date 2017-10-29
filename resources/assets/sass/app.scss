@@ -1,6 +1,6 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
 // Variables
 @import "variables";
@@ -8,6 +8,46 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+body, html {
+	font-family: "Open Sans", Helvetica, Sans-serif;
+	font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: $dark;
+  font-weight: 600;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: 0.75rem;
+}
+
+h6 {
+	font-size: 0.75rem;	
+}
+
+p {
+	color: $text;
+	font-size: 1rem;
+}
 
 .jobs {
 	padding: 0;
@@ -48,17 +88,96 @@
 
 .user {
 
+	&__title {
+		line-height: 1;
+		margin: 4rem 0;
+		text-align: center;
+
+		svg {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	&__job {
+
+		&__title {
+			margin: 4rem 0 0 0;
+			line-height: 1;
+			font-size: 1.5rem;
+		}
+
+		&__salary {
+			font-size: 1.25rem;
+			margin-bottom: 2rem;
+		}
+
+		&__apply {
+			padding: 2rem;
+			background: white;
+			margin-top: 4rem;
+
+			&-title {
+				margin: 0 0 2rem 0;
+			}
+
+			&--top {
+				margin-top: 2rem;
+			}
+		}
+
+		&__description {
+			margin-top: 4rem;
+		}
+
+		&__info {
+			display: block;
+			vertical-align: middle;
+			line-height: 1;
+
+			i {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 1rem;
+				line-height: 1;
+			}
+		}
+
+	}
+
 	&__jobs {
 		padding: 0;
 		margin: 0;
 
 		li {
 			list-style: none;
-			display: grid;
-			grid-template-columns: repeat(6, minmax(0,1fr));
-			grid-gap: 10px;
-			padding: 1rem 0;
-			border-bottom: 1px solid darken(#ffffff,5%);
+			
+			a {
+				display: grid;
+				grid-template-columns: repeat(6, minmax(0,1fr));
+				grid-gap: 10px;
+				padding: 1rem 0 1rem 2rem;
+				border-bottom: 1px solid darken(#ffffff,10%);
+				position: relative;
+				color: $text;
+
+				&:hover {
+					background: white;
+					text-decoration: none;
+				}
+
+				&:before {
+					font-family: 'Material Icons';
+					content: "\E40C";
+					position: absolute;
+					top: 1rem;
+					left: 0;
+					color: $gfm-brand;
+				}
+
+
+			}
+
 		}
 
 		&__title {
@@ -68,5 +187,121 @@
 		&__view {
 			text-align: right;
 		}
+
+		&__apply {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 1rem;
+			text-align: right;
+
+			i {
+				line-height: 1;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 1.25rem;
+				color: $gfm-brand !important;
+				margin-left: 0.5rem;
+			}
+		}
+
+		&--header {
+			font-weight: 600;
+			display: grid;
+			grid-template-columns: repeat(6, minmax(0,1fr));
+			grid-gap: 10px;
+			padding: 1rem 0 1rem 2rem;
+			border-bottom: 1px solid darken(#ffffff,10%);
+			position: relative;
+			color: $text;
+		}
 	}
+}
+
+.header {
+	&__logo {
+		margin-top: 1rem;
+	}
+}
+
+
+.footer {
+	background: $dark;
+	color: white;
+	padding: 4rem 0;
+	margin-top: 4rem;
+
+	h4 {
+		color: white;
+		font-weight: 600;
+		margin: 0 0 1rem 0;
+	}
+
+	&__links {
+		padding: 0;
+
+		@include phone-xs-up {
+			margin: 0 0 3rem 0;
+		}
+		
+		@include tablet-up {
+			margin: 0;
+		}
+
+		li {
+			list-style: none;
+
+			a {
+				color: $grey-fade;
+				display: block;
+				margin-bottom: 0.75rem;
+				
+				&:hover {
+					text-decoration: underline;
+					color: white;
+				}
+			}
+		}
+
+	}
+
+	&__copyright {
+		width: 100%;
+		margin-top: 2rem;
+		border-top:1px solid $grey;
+		padding-top: 1rem;
+		font-size: 0.875rem;
+		color: $grey-fade;
+	}
+}
+
+
+.btn {
+	&-default {
+		font-family: 'Open Sans', sans-serif;
+		background: $gfm-brand;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 600;
+		border-radius: 0;
+		padding: 1.25rem;
+		font-size: 1rem;
+		line-height: 1;
+		border: 0; 
+		outline: 0;
+		background: $gfm-brand; /* Old browsers */
+		background: -moz-linear-gradient(top, $gfm-brand-dark 0%, $gfm-brand 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, $gfm-brand-dark 0%,$gfm-brand 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, $gfm-brand-dark 0%,$gfm-brand 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$gfm-brand-dark, endColorstr=$gfm-brand,GradientType=0 ); /* IE6-9 */
+
+		&:hover {
+			color: white;
+		}
+
+	}
+}
+
+.navbar-default {
+	padding: 1rem 0;
+	border: none;
 }

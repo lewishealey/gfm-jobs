@@ -36,3 +36,105 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+
+$gfm-brand: #FA9A14;
+$gfm-brand-dark: #EB8213;
+
+$unit6-brand: #f36f2c;
+
+$clearcomms-brand: #A9526B;
+
+
+$dark: #282829;
+$text: #4D4D4D;
+$grey: #8C8C8F;
+$grey-fade: #BEBEC2;
+$purple: #744167;
+$grey: #666666;
+$fade: #F5F5F5;
+
+$phone-xs-width: 320px;
+$phone-width: 375px;
+$tablet-width: 768px;
+$tablet-xl-width: 1024px; 
+$desktop-width: 1140px;
+$desktop-xl-width: 1600px;
+
+@mixin phone-xs-up {
+  @media (min-width: #{$phone-xs-width}) {
+    @content;
+  }
+}
+
+@mixin phone-up {
+  @media (min-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-xl-up {
+  @media (min-width: #{$tablet-xl-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl-up {
+  @media (min-width: #{$desktop-xl-width}) {
+    @content;
+  }
+}
+
+@mixin transition($args...) {
+   -webkit-transition: $args;
+   -moz-transition: $args;
+   -ms-transition: $args;
+   -o-transition: $args;
+   transition: $args;
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin font-size($size) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin animation($str...) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}

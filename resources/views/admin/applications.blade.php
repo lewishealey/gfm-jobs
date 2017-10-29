@@ -27,7 +27,7 @@
                         <td><a href="mailto:{{$application->email}}">{{$application->email}}</a></td>
                         <td>{{$application->phone}}</td>
                         <td>{{$application->hear}}</td>
-                        <td><a href="{{$application->cv}}" class="btn btn-info">Download CV</a></td>
+                        <td><a href="{{asset($application->cv)}}" class="btn btn-info">Download CV</a></td>
                         @if($application->accepted == NULL && $application->rejected == NULL)
                             <td>
                                 <a href="{{url("/application/accept/{$application->id}")}}" class="btn btn-success">Accept</a>
