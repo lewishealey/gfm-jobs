@@ -16,7 +16,7 @@ Route::get('/', 'PostController@all')->name('all.post');
 
 Route::get('/admin/home', 'AdminController@index')->name('home');
 
-Route::post('/application/store', 'ApplicationController@store')->name('store.applciation');
+Route::post('/application/store', 'ApplicationController@store')->name('store.application');
 
 Route::get('/application/success', function () {
     return view('user.success');

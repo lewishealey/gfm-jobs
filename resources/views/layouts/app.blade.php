@@ -46,7 +46,9 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @else
+                            <li><a href="{{ route('home') }}">Dashboard</a></li>
                             <li><a href="{{ route('create.post') }}">Create job</a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -54,6 +56,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -83,9 +86,9 @@
                 <div class="col-md-5">
                     <h4>Our Brands</h4>
                     <ul class="footer__links">
-                        <li><a href="https://gfm.co.uk/our-history/" title="Clear Comms brand">ClearComms</a></li>
-                        <li><a href="https://gfm.co.uk/our-history/" title="Unit 6 brand">Unit 6</a></li>
-                        <li><a href="https://gfm.co.uk/our-history/" title="Breakfree Holidays brand">Breakfree Holidays</a></li>
+                        <li><a href="https://gfm.co.uk/" title="Clear Comms brand">ClearComms</a></li>
+                        <li><a href="https://gfm.co.uk/" title="Unit 6 brand">Unit 6</a></li>
+                        <li><a href="https://gfm.co.uk/" title="Breakfree Holidays brand">Breakfree Holidays</a></li>
                     </ul>
                 </div>
 

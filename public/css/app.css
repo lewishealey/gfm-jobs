@@ -8433,6 +8433,98 @@ p {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.admin__application__accept i {
+  color: green;
+  font-size: 1.5rem;
+}
+
+.admin__application__reject i {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.admin__application__nothing i {
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.admin__jobs {
+  padding: 0;
+  margin: 0;
+}
+
+.admin__jobs li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-gap: 10px;
+  padding: 1rem 0 1rem 2rem;
+  border-bottom: 1px solid #e6e5e5;
+  position: relative;
+  color: #4D4D4D;
+}
+
+.admin__jobs li a {
+  color: #4D4D4D;
+}
+
+.admin__jobs li a:hover {
+  text-decoration: none;
+}
+
+.admin__jobs li .btn {
+  color: white !important;
+}
+
+.admin__jobs li:hover {
+  background: white;
+  text-decoration: none;
+}
+
+.admin__jobs li:before {
+  font-family: 'Material Icons';
+  content: "\E40C";
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  color: #FA9A14;
+}
+
+.admin__jobs__title {
+  grid-column: auto / span 3;
+}
+
+.admin__jobs__view {
+  text-align: right;
+}
+
+.admin__jobs__apply {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.admin__jobs__apply i {
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.25rem;
+  color: #FA9A14 !important;
+  margin-left: 0.5rem;
+}
+
+.admin__jobs--header {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-gap: 10px;
+  padding: 1rem 0 1rem 2rem;
+  border-bottom: 1px solid #e6e5e5;
+  position: relative;
+  color: #4D4D4D;
+}
+
 .user__title {
   line-height: 1;
   margin: 4rem 0;

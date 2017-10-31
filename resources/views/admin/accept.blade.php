@@ -23,7 +23,9 @@
 
                 <p><input type="text" class="form-control" value="{{$application->email}}"></p>
                 <p><textarea name="description" class="form-control" placeholder="Job description" rows="10">
-                    {!!$response->contents!!}
+                    @if(isset($response->contents))
+                        {!!$response->contents!!}
+                    @endif
                 </textarea></p>
                 <p>
                     <input type="submit" class="btn btn-primary" value="Send acceptance email">

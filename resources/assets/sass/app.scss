@@ -84,6 +84,100 @@ p {
 			border-bottom: 1px solid darken(#ffffff,5%);
 		}
 	}
+
+	&__application {
+
+		&__accept {
+			i { color: green; font-size: 1.5rem; }
+		}
+
+		&__reject {
+			i { color: red; font-size: 1.5rem; }
+		}
+
+		&__nothing {
+			i { color: grey; font-size: 1.5rem; }
+		}
+	}
+
+	&__jobs {
+		padding: 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+				display: grid;
+				grid-template-columns: repeat(6, minmax(0,1fr));
+				grid-gap: 10px;
+				padding: 1rem 0 1rem 2rem;
+				border-bottom: 1px solid darken(#ffffff,10%);
+				position: relative;
+				color: $text;
+
+				a {
+					color: $text;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				.btn {
+					color: white !important;
+				}
+
+				&:hover {
+					background: white;
+					text-decoration: none;
+				}
+
+				&:before {
+					font-family: 'Material Icons';
+					content: "\E40C";
+					position: absolute;
+					top: 1rem;
+					left: 0;
+					color: $gfm-brand;
+				}
+
+
+		}
+
+		&__title {
+			grid-column: auto / span 3;
+		}
+
+		&__view {
+			text-align: right;
+		}
+
+		&__apply {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 1rem;
+			text-align: right;
+
+			i {
+				line-height: 1;
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 1.25rem;
+				color: $gfm-brand !important;
+				margin-left: 0.5rem;
+			}
+		}
+
+		&--header {
+			font-weight: 600;
+			display: grid;
+			grid-template-columns: repeat(6, minmax(0,1fr));
+			grid-gap: 10px;
+			padding: 1rem 0 1rem 2rem;
+			border-bottom: 1px solid darken(#ffffff,10%);
+			position: relative;
+			color: $text;
+		}
+	}
 }
 
 .user {

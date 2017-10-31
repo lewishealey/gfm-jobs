@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 
 use App\Application;
 use Carbon\Carbon;
+
+use App\Mail\NewApplication;
+use App\Mail\ApplicationConfirmation;
 
 class ApplicationController extends Controller
 {
@@ -45,6 +49,8 @@ class ApplicationController extends Controller
         }
 
         if($application->save()) {
+          Mail::to("hello@lewi.sh")->send(new NewApplication($application));
+          Mail::to("hello@lewi.sh")->send(new ApplicationConfirmation($application));
           return redirect()->route('successful.application');
         }
         
@@ -71,9 +77,13 @@ class ApplicationController extends Controller
         $response = DB::table('template')->where('category', $application->post->category)->where('type', 'accept')->first();
         $date = Carbon::now()->format('l jS \\of F');
 
-        $response->contents = str_replace('*|NAME|*', $application->first_name . " " . $application->last_name, $response->contents);
-        $response->contents = str_replace('*|JOB|*', $application->post->title, $response->contents);
-        $response->contents = str_replace('*|DATE|*', $date, $response->contents);
+         Mail::to("hello@lewi.sh")->send(new NewApplication($application));
+
+        if($response) {
+            $response->contents = str_replace('*|NAME|*', $application->first_name . " " . $application->last_name, $response->contents); 
+            $response->contents = str_replace('*|JOB|*', $application->post->title, $response->contents);
+            $response->contents = str_replace('*|DATE|*', $date, $response->contents);
+        }
 
         return view('admin.accept', ['application' => $application, 'response' => $response]);
     }

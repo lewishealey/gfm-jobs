@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <h2>Jobs dashboard</h2>
 
-            <ul class="jobs">
+            <ul class="admin__jobs">
 				@if(count($posts) > 0)
 					@foreach($posts as $post)
 					    <li>
@@ -25,7 +25,7 @@
 					        	{{$post->brand}}
 					        </div>
 					        <div class="jobs__edit">
-					        	<a href="{{url("/post/{$post->id}/applications")}}" class="btn btn-info" title="Applications for {{$post->title}}">
+					        	<a href="{{url("/post/{$post->id}/applications")}}" class="btn btn-success" title="Applications for {{$post->title}}">
 					        		Applications
 					        	</a>
 					        	<a href="{{url("/post/edit/{$post->id}")}}" class="btn btn-info" title="Edit job {{$post->title}}">
