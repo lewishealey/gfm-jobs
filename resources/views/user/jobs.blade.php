@@ -25,10 +25,10 @@
 				        <div class="user__jobs__title">
 				        	Job title
 				        </div>
-				        <div>
+				        <div class="hidden-xs">
 				        	Category
 				        </div>
-				        <div>
+				        <div class="hidden-xs">
 				        	Brand
 				        </div>
 				        <div class="user__jobs__apply">
@@ -41,10 +41,10 @@
 						        <div class="user__jobs__title">
 						        	{{$post->title}}
 						        </div>
-						        <div>
+						        <div class="hidden-xs">
 						        	{{$post->category}}
 						        </div>
-						        <div>
+						        <div class="hidden-xs">
 						        	{{$post->brand}}
 						        </div>
 						        <div class="user__jobs__apply">

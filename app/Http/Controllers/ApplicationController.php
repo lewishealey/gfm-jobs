@@ -77,8 +77,6 @@ class ApplicationController extends Controller
         $response = DB::table('template')->where('category', $application->post->category)->where('type', 'accept')->first();
         $date = Carbon::now()->format('l jS \\of F');
 
-         Mail::to("hello@lewi.sh")->send(new NewApplication($application));
-
         if($response) {
             $response->contents = str_replace('*|NAME|*', $application->first_name . " " . $application->last_name, $response->contents); 
             $response->contents = str_replace('*|JOB|*', $application->post->title, $response->contents);

@@ -183,9 +183,17 @@ p {
 .user {
 
 	&__title {
-		line-height: 1;
-		margin: 4rem 0;
 		text-align: center;
+
+		@include phone-xs-up {
+			line-height: 1.5;
+			margin: 2rem 0;
+		}
+		
+		@include tablet-up {
+			line-height: 1;
+			margin: 4rem 0;
+		}
 
 		svg {
 			display: inline-block;
@@ -197,8 +205,17 @@ p {
 
 		&__title {
 			margin: 4rem 0 0 0;
-			line-height: 1;
 			font-size: 1.5rem;
+
+			@include phone-xs-up {
+				margin: 2rem 0 0 0;
+				line-height: 1.5;
+			}
+			
+			@include tablet-up {
+				margin: 4rem 0 0 0;
+				line-height: 1;
+			}
 		}
 
 		&__salary {
@@ -248,12 +265,19 @@ p {
 			
 			a {
 				display: grid;
-				grid-template-columns: repeat(6, minmax(0,1fr));
 				grid-gap: 10px;
 				padding: 1rem 0 1rem 2rem;
 				border-bottom: 1px solid darken(#ffffff,10%);
 				position: relative;
 				color: $text;
+
+				@include phone-xs-up {
+					grid-template-columns: repeat(2, minmax(0,1fr));
+				}
+				
+				@include tablet-up {
+					grid-template-columns: repeat(6, minmax(0,1fr));
+				}
 
 				&:hover {
 					background: white;
@@ -275,7 +299,14 @@ p {
 		}
 
 		&__title {
-			grid-column: auto / span 3;
+
+			@include phone-xs-up {
+				grid-column: auto / span 1;
+			}
+			
+			@include tablet-up {
+				grid-column: auto / span 3;
+			}
 		}
 
 		&__view {
@@ -301,12 +332,19 @@ p {
 		&--header {
 			font-weight: 600;
 			display: grid;
-			grid-template-columns: repeat(6, minmax(0,1fr));
 			grid-gap: 10px;
 			padding: 1rem 0 1rem 2rem;
 			border-bottom: 1px solid darken(#ffffff,10%);
 			position: relative;
 			color: $text;
+
+			@include phone-xs-up {
+				grid-template-columns: repeat(2, minmax(0,1fr));
+			}
+			
+			@include tablet-up {
+				grid-template-columns: repeat(6, minmax(0,1fr));
+			}
 		}
 	}
 }

@@ -4,6 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             <form action="/post/store" role="form" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <p><input type="text" name="title" class="form-control" value="{{ old('title') }}" placeholder="Title"/></p>
@@ -14,7 +23,7 @@
                         <option {{ (old('hours') == "Part-time" ? "selected":"") }} value="Part-time">Part-time</option>
                     </select>
                 </p>
-                <p><input type="text" name="extra" class="form-control" value="{{ old('extra') }}" placeholder="extra"/></p>
+                <p><input type="text" name="extra" class="form-control" value="{{ old('extra') }}" placeholder="Any additional info?"/></p>
 
                 <p><select name="category" class="form-control">
                     <option {{ (old('category') == "Customer Service" ? "selected":"") }} value="Customer Service">Customer service</option>
@@ -34,17 +43,8 @@
 
                 <p><textarea name="description" class="form-control" value="{{ old('description') }}" placeholder="Job description" rows="10"></textarea></p>
 
-                <p><input type="submit" class="btn btn-primary" value="Create"></p>
+                <p><input type="submit" class="btn btn-default" value="Create job"></p>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
 
             </form>
         </div>

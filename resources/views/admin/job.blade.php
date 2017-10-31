@@ -24,7 +24,7 @@
                         <option {{ ($post->hours == "Part-time" ? "selected":"") }} value="Part-time">Part-time</option>
                     </select>
                 </p>
-                <p><input type="text" name="extra" class="form-control" value="{{$post->extra}}" placeholder="extra"/></p>
+                <p><input type="text" name="extra" class="form-control" value="{{$post->extra}}" placeholder="Any additional info?"/></p>
 
                 <p><select name="category" class="form-control">
                     <option {{ ($post->category == "Customer Service" ? "selected":"") }} value="Customer Service">Customer service</option>
@@ -41,10 +41,12 @@
                 </p>
                  <p><input type="text" name="location" class="form-control" value="{{ $post->location }}" placeholder="Location"/></p>
                 <p><input type="file" name="attachment" class="form-control" placeholder="Attachment"/></p>
-                <p>Current file: {{$post->attachment}} </p>
+                @if(isset($post->attachment))
+                    <p class="alert alert-info"><a href="{{asset("storage/" . $post->attachment)}}" target="blank">View current file</a></p>
+                @endif
                 <p><textarea name="description" class="form-control" placeholder="Job description" rows="10">{!!$post->description!!}</textarea></p>
                 <input type="hidden" value="{{$post->id}}" name="id">
-                <p><input type="submit" class="btn btn-primary" value="Update"></p>
+                <p><input type="submit" class="btn btn-default" value="Update"></p>
 
 
             </form>

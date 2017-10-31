@@ -8526,9 +8526,21 @@ p {
 }
 
 .user__title {
-  line-height: 1;
-  margin: 4rem 0;
   text-align: center;
+}
+
+@media (min-width: 320px) {
+  .user__title {
+    line-height: 1.5;
+    margin: 2rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .user__title {
+    line-height: 1;
+    margin: 4rem 0;
+  }
 }
 
 .user__title svg {
@@ -8538,8 +8550,21 @@ p {
 
 .user__job__title {
   margin: 4rem 0 0 0;
-  line-height: 1;
   font-size: 1.5rem;
+}
+
+@media (min-width: 320px) {
+  .user__job__title {
+    margin: 2rem 0 0 0;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 768px) {
+  .user__job__title {
+    margin: 4rem 0 0 0;
+    line-height: 1;
+  }
 }
 
 .user__job__salary {
@@ -8589,12 +8614,23 @@ p {
 
 .user__jobs li a {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-gap: 10px;
   padding: 1rem 0 1rem 2rem;
   border-bottom: 1px solid #e6e5e5;
   position: relative;
   color: #4D4D4D;
+}
+
+@media (min-width: 320px) {
+  .user__jobs li a {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .user__jobs li a {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
 
 .user__jobs li a:hover {
@@ -8611,8 +8647,16 @@ p {
   color: #FA9A14;
 }
 
-.user__jobs__title {
-  grid-column: auto / span 3;
+@media (min-width: 320px) {
+  .user__jobs__title {
+    grid-column: auto / span 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .user__jobs__title {
+    grid-column: auto / span 3;
+  }
 }
 
 .user__jobs__view {
@@ -8638,12 +8682,23 @@ p {
 .user__jobs--header {
   font-weight: 600;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-gap: 10px;
   padding: 1rem 0 1rem 2rem;
   border-bottom: 1px solid #e6e5e5;
   position: relative;
   color: #4D4D4D;
+}
+
+@media (min-width: 320px) {
+  .user__jobs--header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .user__jobs--header {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
 
 .header__logo {
