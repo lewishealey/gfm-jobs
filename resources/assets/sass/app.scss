@@ -8,9 +8,14 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "components/navigation";
+@import "components/header";
+
 body, html {
 	font-family: "Open Sans", Helvetica, Sans-serif;
-	font-size: 16px;
+	font-size: 15px;
+	-webkit-font-smoothing: antialiased;
+	background: white;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -69,6 +74,25 @@ p {
 	&__edit {
 		text-align: right;
 	}
+
+	&__applications {
+
+		i {
+			color: lighten($grey,10%);
+			margin-right: 0.5rem;
+		}
+
+
+		i, a {
+			display: inline-block;
+			vertical-align: middle;
+			@include animation(all 0.5s linear);
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
 }
 
 .admin {
@@ -107,7 +131,7 @@ p {
 		li {
 			list-style: none;
 				display: grid;
-				grid-template-columns: repeat(6, minmax(0,1fr));
+				grid-template-columns: repeat(4, minmax(0,1fr));
 				grid-gap: 10px;
 				padding: 1rem 0 1rem 2rem;
 				border-bottom: 1px solid darken(#ffffff,10%);
@@ -144,7 +168,7 @@ p {
 		}
 
 		&__title {
-			grid-column: auto / span 3;
+			grid-column: auto / span 2;
 		}
 
 		&__view {
@@ -178,6 +202,10 @@ p {
 			color: $text;
 		}
 	}
+
+	&__faq {
+		margin-top: 4rem;
+	}
 }
 
 .user {
@@ -204,7 +232,7 @@ p {
 	&__job {
 
 		&__title {
-			margin: 4rem 0 0 0;
+			margin: rem 0 0 0;
 			font-size: 1.5rem;
 
 			@include phone-xs-up {
@@ -213,8 +241,26 @@ p {
 			}
 			
 			@include tablet-up {
-				margin: 4rem 0 0 0;
+				margin: 6rem 0 0 0;
 				line-height: 1;
+			}
+		}
+
+		&__visual {
+			background-size: cover;
+			height: 100vh;
+			width: 30%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 0;
+
+			@include phone-xs-up {
+				background: transparent;
+			}
+			
+			@include tablet-up {
+				background: url("http://gfm-jobs:8888/storage/visual.jpg") center center;
 			}
 		}
 
@@ -223,10 +269,38 @@ p {
 			margin-bottom: 2rem;
 		}
 
+		&__share {
+			margin-top: 4rem;
+
+			a {
+				background: $grey;
+				border-radius: 50%;
+				height: 2rem;
+				width: 2rem;
+				color: white;
+				line-height: 1;
+				display: inline-block;
+				padding: 0.5rem;
+				text-align: center;
+				margin-right: 1rem;
+
+				&.facebook {
+					background: #3D5B96;
+				}
+				&.twitter {
+					background: #1DADEA;
+				}
+				&.linkedin {
+					background: #117CB4;
+				}
+			}
+		}
+
 		&__apply {
-			padding: 2rem;
 			background: white;
 			margin-top: 4rem;
+			background: lighten($fade,2%);
+			padding: 2rem;
 
 			&-title {
 				margin: 0 0 2rem 0;
@@ -355,9 +429,13 @@ p {
 	}
 }
 
+.flash-message {
+	margin-top: 2rem;
+}
 
 .footer {
-	background: $dark;
+	background: $dark url("http://lewi.sh/gfm/wp-content/uploads/2017/11/footer.jpg");
+	background-size: cover;
 	color: white;
 	padding: 4rem 0;
 	margin-top: 4rem;
@@ -430,6 +508,11 @@ p {
 			color: white;
 		}
 
+	}
+
+	&-ghost {
+		background: $gfm-brand;
+		color: white;
 	}
 }
 

@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="user__job__header"></div>
+
 <div class="container">
 	<div class="row justify-content-between">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-7">
 			<h1 class="user__job__title">{{$post->title}}</h1>
 			<h2 class="user__job__salary">{{$post->salary}}</h2>
 			<p class="user__job__info"><i class="material-icons">label</i>{{$post->category}}</p>
@@ -17,11 +20,14 @@
 
 			<div class="user__job__share">
 				<h4>Share this job</h4>
-				<a href="#">Facebook</a> <a href="#">Twitter</a> <a href="#">Linkedin</a>
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{url("/job/{$post->slug}/{$post->id}")}}" class="facebook" target="blank">
+					<i class="fa fa-facebook"></i>
+				</a><a href="https://twitter.com/home?status={{url("/job/{$post->slug}/{$post->id}")}}" class="twitter" target="blank">
+					<i class="fa fa-twitter"></i>
+				</a><a href="https://www.linkedin.com/shareArticle?mini=true&url={{url("/job/{$post->slug}/{$post->id}")}}&title={{$post->title}}&summary=&source=" class="linkedin" target="blank">
+					<i class="fa fa-linkedin"></i>
+				</a> 
 			</div>
-		</div>
-
-		<div class="col-12 col-md-offset-1 col-md-5">
 
 			<div class="user__job__apply" id="apply">
 				<h3 class="user__job__apply-title">Apply now</h3>
@@ -57,6 +63,9 @@
 	            </form>
 	        </div>
 		</div>
+
+		<div class="user__job__visual"></div>
+
 	</div>
 
 </div>

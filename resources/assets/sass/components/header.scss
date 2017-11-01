@@ -1,0 +1,40 @@
+.header {
+	background: $fade;
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+
+	@include phone-xs-up {
+		padding: 1rem 0;
+	}
+
+	@include tablet-up {
+		padding: 0;
+	}
+
+	&__logo {
+		
+		img {
+			max-height: 2rem;
+
+			@include tablet-up {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	@include phone-up {
+		.container {
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
+
+	@include tablet-up {
+		.container {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+
+}

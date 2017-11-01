@@ -11,15 +11,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
+        <header class="header">
+            <div class="container">
+                <div>
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -30,24 +31,20 @@
 
                     <!-- Branding Image -->
                     <a href="{{ url('/') }}" class="navbar-brand">
-                        GFM Jobs Portal
+                        <img src="http://lewi.sh/gfm/wp-content/uploads/2017/11/gfm-logo.png" height="30">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
+                    <nav class="nav">
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                         @else
-                            <li><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li><a href="{{ route('create.post') }}">Create job</a></li>
+                            <li {{{ (Request::is('admin/home') ? 'class=active' : '') }}}><a href="{{ route('home') }}">Dashboard</a></li>
+                            <li {{{ (Request::is('post/create') ? 'class=active' : '') }}}><a href="{{ route('create.post') }}">Create job</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -71,9 +68,26 @@
                             </li>
                         @endif
                     </ul>
+                </nav>
                 </div>
             </div>
-        </nav>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flash-message">
+                        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                          @if(Session::has('alert-' . $msg))
+
+                          <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                          @endif
+                        @endforeach
+                    </div> <!-- end .flash-message -->
+
+                </div>
+            </div>
+        </div>
 
         @yield('content')
     </div>

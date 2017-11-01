@@ -62,7 +62,7 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function accept($id)
+    public function accept(Request $request, $id)
     {   
         $application = Application::find($id);
 
@@ -83,6 +83,8 @@ class ApplicationController extends Controller
             $response->contents = str_replace('*|DATE|*', $date, $response->contents);
         }
 
+        $request->session()->flash('alert-success', $application->first_name . ' has been accepted');
+
         return view('admin.accept', ['application' => $application, 'response' => $response]);
     }
 
@@ -91,7 +93,7 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reject($id)
+    public function reject(Request $request, $id)
     {   
         $application = Application::find($id);
 
@@ -102,6 +104,10 @@ class ApplicationController extends Controller
         $application->rejected = 1;
         $application->save();
 
+        $request->session()->flash('alert-danger', $application->first_name . ' has been rejected');
+
+        return redirect()->route('successful.application');
+        
         return back()->withInput();
 
         // $response = DB::table('template')->where('category', $application->post->category)->where('type', 'reject')->first();

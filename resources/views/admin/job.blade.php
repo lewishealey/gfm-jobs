@@ -14,6 +14,8 @@
                 </div>
             @endif
 
+            <h2>Edit {{$post->title}}</h2>
+
             <form action="/post/update" role="form" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <p><input type="text" name="title" class="form-control" value="{{$post->title}}" placeholder="Title"/></p>

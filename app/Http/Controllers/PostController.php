@@ -41,6 +41,7 @@ class PostController extends Controller
         }
 
         if($post->save()) {
+            $request->session()->flash('alert-success', 'Job created');
             return redirect()->route('home');
         }
 
@@ -78,7 +79,8 @@ class PostController extends Controller
         }
 
         if($post->save()) {
-            return redirect()->route('home');
+            $request->session()->flash('alert-success', 'Job updated');
+            return back()->withInput();
         }
 
     }

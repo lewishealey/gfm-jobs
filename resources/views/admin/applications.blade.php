@@ -28,11 +28,11 @@
                     <th>Number</th>
                     <th>Heard about us</th>
                     <th>Download CV</th>
-                    <th>Status</th>
                     <th>Date/time</th>
+                    <th>Status</th>
                 </tr>
                 @foreach($post->applications as $application)
-                    <tr>
+                    <tr class="{{$application->email_sent == 1 ? 'success' : ''}}">
                         @if($application->accepted == 1)
                             <td class="admin__application__accept">
                                 <i class="material-icons">check</i>
@@ -54,25 +54,14 @@
                         <td>{{$application->phone}}</td>
                         <td>{{$application->hear}}</td>
                         <td><a href="{{asset("storage/" . $application->cv)}}" class="btn btn-info">Download CV</a></td>
-                        @if($application->accepted == NULL && $application->rejected == NULL)
-                            <td>
-                                <a href="{{url("/application/accept/{$application->id}")}}" class="btn btn-success">Accept</a>
-                                <a href="{{url("/application/reject/{$application->id}")}}" class="btn btn-danger">Reject</a>
-                            </td>
-                        @endif
-                        @if($application->accepted == 1)
-                            <td>
-                                Accepted
-                            </td>
-                        @endif
-                        @if($application->rejected == 1)
-                            <td>
-                                Rejected
-                            </td>
-                        @endif
                         <td>
                             {{$application->created_at}}
                         </td>
+                        <td>
+                            <a href="{{url("/application/accept/{$application->id}")}}" class="btn btn-ghost {{$application->accepted == 1 ? ' disabled' : ''}}">Accept</a>
+                            <a href="{{url("/application/reject/{$application->id}")}}" class="btn btn-ghost {{$application->rejected == 1 ? ' disabled' : ''}}">Reject</a>
+                        </td>
+                    
                     </tr>
                 @endforeach
             </table>
@@ -81,6 +70,21 @@
 
     </div>
 
+</div>
+
+<div class="admin__faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>What are the tick, crosses and lines on the left?</h4>
+                <p>That is a quick way to show who has been accepted and rejected. The grey line shows that no one has neither accepted or rejected the applicant.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Why are table rows green?</h4>
+                <p>It means you've either accepted or rejected the applicant and sent out an email response.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection
