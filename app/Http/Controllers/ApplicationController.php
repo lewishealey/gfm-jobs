@@ -50,7 +50,7 @@ class ApplicationController extends Controller
 
         if($application->save()) {
           Mail::to("hello@lewi.sh")->send(new NewApplication($application));
-          Mail::to("hello@lewi.sh")->send(new ApplicationConfirmation($application));
+          Mail::to($application->email)->send(new ApplicationConfirmation($application));
           return redirect()->route('successful.application');
         }
         

@@ -21,15 +21,16 @@
                     </div>
                 @endif
 
-                <p><input type="text" class="form-control" value="{{$application->email}}"></p>
+                <p><input type="text" name="email" class="form-control" value="{{$application->email}}"></p>
                 <p><textarea name="description" class="form-control" placeholder="Job description" rows="10">
                     @if(isset($response->contents))
                         {!!$response->contents!!}
                     @endif
                 </textarea></p>
-                <p>
+                <p> 
+                    <input type="hidden" name="id" value={{$application->id}}>
                     <input type="submit" class="btn btn-primary" value="Send acceptance email">
-                    <a href="{{url()->previous()}}" class="btn btn-default">Back to job</a>
+                    <a href="{{url()->previous()}}" class="btn">Back to job</a>
                 </p>
 
             </form>
@@ -43,7 +44,7 @@
 
 tinymce.init({
   selector: 'textarea',
-  height: 500,
+  height: 250,
   menubar: false,
   plugins: [
     'advlist autolink lists link image charmap print preview anchor',
