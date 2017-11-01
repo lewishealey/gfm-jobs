@@ -33,7 +33,7 @@
                 </p>
                 <p>
                     <select name="brand" class="form-control">
-                        <option {{ (old('brand') == "ClearComms" ? "selected":"") }} value="clear-comms">GFM Clearcomms</option>
+                        <option {{ (old('brand') == "ClearComms" ? "selected":"") }} value="ClearComms">GFM Clearcomms</option>
                         <option {{ (old('brand') == "GFM" ? "selected":"") }} value="GFM">GFM</option>
                         <option {{ (old('brand') == "Breakfree Holidays" ? "selected":"") }} value="Breakfree Holidays">Breakfree Holidays</option>
                     </select>

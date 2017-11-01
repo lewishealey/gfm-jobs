@@ -49,7 +49,7 @@
 	                
 	                <p><input type="text" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email"/></p>
 	                <p><input type="text" name="phone" class="form-control" value="{{ old('phone') }}" placeholder="Phone number"/></p>
-	                <p><input type="text" name="hear" class="form-control" value="{{ old('hear') }}" placeholder="Wheere did you hear about us?"/></p>
+	                <p><input type="text" name="hear" class="form-control" value="{{ old('hear') }}" placeholder="Where did you hear about us?"/></p>
 	                <p><input type="file" name="cv" class="form-control" value="{{ old('cv') }}" placeholder="Cv"/></p>
 	                <input type="hidden" name="post_id" class="form-control" value="{{$post->id}}" />
 	                <p><input type="submit" class="btn btn-default" value="Submit application"></p>
