@@ -86,19 +86,17 @@
                 <div class="col-md-5">
                     <h4>Our Brands</h4>
                     <ul class="footer__links">
-                        <li><a href="https://gfm.co.uk/" title="Clear Comms brand">ClearComms</a></li>
-                        <li><a href="https://gfm.co.uk/" title="Unit 6 brand">Unit 6</a></li>
-                        <li><a href="https://gfm.co.uk/" title="Breakfree Holidays brand">Breakfree Holidays</a></li>
+                        <li><a href="https://gfm.co.uk/brand/clear-comms" title="Clear Comms brand">ClearComms</a></li>
+                        <li><a href="https://gfm.co.uk/brand/unit-6" title="Unit 6 brand">Unit 6</a></li>
+                        <li><a href="https://gfm.co.uk/brand/breakfree-holidays" title="Breakfree Holidays brand">Breakfree Holidays</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-3">
                     <h4>News</h4>
                     <ul class="footer__links">
-                        <li><a href="https://gfm.co.uk/our-history/" title="Press Releases">Press Releases</a></li>
-                        <li><a href="https://gfm.co.uk/our-history/" title="Blog">Blog</a></li>
-                        <li><a href="https://gfm.co.uk/our-history/" title="Newsletters">Newsletters</a></li>
-                        <li><a href="https://gfm.co.uk/our-history/" title="Downloads">Downloads</a></li>
+                        <li><a href="https://gfm.co.uk/press-releases/" title="Press Releases">Press Releases</a></li>
+                        <li><a href="https://gfm.co.uk/blog/" title="Blog">Blog</a></li>
                     </ul>
                 </div>
 
