@@ -20,7 +20,6 @@ class PostController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'salary' => 'required',
             'attachment' => 'max:2048|mimes:pdf,doc,docx'
         ]);
 
