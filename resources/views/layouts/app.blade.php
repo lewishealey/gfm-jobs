@@ -29,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a href="{{ url('/') }}">
-                        <img src="http://cdn.gfm.co.uk/gfms/images/graphics/general/gfm-masthead.jpg" height="30" class="header__logo">
+                    <a href="{{ url('/') }}" class="navbar-brand">
+                        GFM Jobs Portal
                     </a>
                 </div>
 
