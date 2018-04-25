@@ -17,10 +17,7 @@ Route::get('/', 'PostController@all')->name('all.post');
 Route::get('/admin/home', 'AdminController@index')->name('home');
 
 Route::post('/application/store', 'ApplicationController@store')->name('store.application');
-
-Route::get('/application/success', function () {
-    return view('user.success');
-})->name('successful.application');
+Route::get('/application/success/{id}', 'ApplicationController@success')->name('successful.application');
 Route::get('/application/reject/{id}', 'ApplicationController@reject')->name('reject.application');
 Route::get('/application/accept/{id}', 'ApplicationController@accept')->name('accept.application');
 

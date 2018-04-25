@@ -54,6 +54,61 @@ p {
 	font-size: 1rem;
 }
 
+label {
+	color: $text;
+	font-weight: normal;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.table > thead > tr > td.success, .table > thead > tr > th.success, .table > thead > tr.success > td, .table > thead > tr.success > th, .table > tbody > tr > td.success, .table > tbody > tr > th.success, .table > tbody > tr.success > td, .table > tbody > tr.success > th, .table > tfoot > tr > td.success, .table > tfoot > tr > th.success, .table > tfoot > tr.success > td, .table > tfoot > tr.success > th {
+	background-color: #EFF7E6;
+}
+
+.badge {
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.badge-accept {
+	background-color: #88DB7D;
+	color: #233E20;
+
+	&.disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+}
+
+.badge-download {
+	background-color: #C5C5C5;
+	color: #171717;
+
+	i {
+		font-size: 0.75rem;
+		line-height: 1;
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+.badge-contacted {
+	background-color: #91C0FF;
+	color: #111E3E;
+}
+
+.badge-reject {
+	background-color: #FF93AE;
+	color: #5C212E;
+
+	&.disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+}
+
 .jobs {
 	padding: 0;
 	margin: 0;
@@ -110,6 +165,10 @@ p {
 	}
 
 	&__application {
+
+		&__title {
+			margin: 0;
+		}
 
 		&__accept {
 			i { color: green; font-size: 1.5rem; }
@@ -297,10 +356,7 @@ p {
 		}
 
 		&__apply {
-			background: white;
 			margin-top: 4rem;
-			background: lighten($fade,2%);
-			padding: 2rem;
 
 			&-title {
 				margin: 0 0 2rem 0;
@@ -434,7 +490,7 @@ p {
 }
 
 .footer {
-	background: $dark url("http://lewi.sh/gfm/wp-content/uploads/2017/11/footer.jpg");
+	background: $dark url("https://www.gfm.co.uk/wp-content/uploads/2017/11/footer@x2.jpg");
 	background-size: cover;
 	color: white;
 	padding: 4rem 0;
@@ -508,11 +564,6 @@ p {
 			color: white;
 		}
 
-	}
-
-	&-ghost {
-		background: $gfm-brand;
-		color: white;
 	}
 }
 

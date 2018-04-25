@@ -31,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a href="{{ url('/') }}" class="navbar-brand">
-                        <img src="http://lewi.sh/gfm/wp-content/uploads/2017/11/gfm-logo.png" height="30">
+                        <img src="https://www.gfm.co.uk/wp-content/uploads/2017/11/GFM-Logo.svg" height="30">
                     </a>
                 </div>
 

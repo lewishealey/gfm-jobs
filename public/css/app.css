@@ -8557,7 +8557,6 @@ button.close {
 .header {
   background: #F5F5F5;
   z-index: 1;
-  position: fixed;
   width: 100%;
 }
 
@@ -8646,6 +8645,72 @@ p {
   font-size: 1rem;
 }
 
+label {
+  color: #4D4D4D;
+  font-weight: normal;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.table > thead > tr > td.success,
+.table > thead > tr > th.success,
+.table > thead > tr.success > td,
+.table > thead > tr.success > th,
+.table > tbody > tr > td.success,
+.table > tbody > tr > th.success,
+.table > tbody > tr.success > td,
+.table > tbody > tr.success > th,
+.table > tfoot > tr > td.success,
+.table > tfoot > tr > th.success,
+.table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th {
+  background-color: #EFF7E6;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-accept {
+  background-color: #88DB7D;
+  color: #233E20;
+}
+
+.badge-accept.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.badge-download {
+  background-color: #C5C5C5;
+  color: #171717;
+}
+
+.badge-download i {
+  font-size: 0.75rem;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.badge-contacted {
+  background-color: #91C0FF;
+  color: #111E3E;
+}
+
+.badge-reject {
+  background-color: #FF93AE;
+  color: #5C212E;
+}
+
+.badge-reject.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .jobs {
   padding: 0;
   margin: 0;
@@ -8698,6 +8763,10 @@ p {
   display: flex;
   padding: 1rem 0;
   border-bottom: 1px solid #f2f2f2;
+}
+
+.admin__application__title {
+  margin: 0;
 }
 
 .admin__application__accept i {
@@ -8895,10 +8964,7 @@ p {
 }
 
 .user__job__apply {
-  background: white;
   margin-top: 4rem;
-  background: #fafafa;
-  padding: 2rem;
 }
 
 .user__job__apply-title {
@@ -9033,7 +9099,7 @@ p {
 }
 
 .footer {
-  background: #282829 url("http://lewi.sh/gfm/wp-content/uploads/2017/11/footer.jpg");
+  background: #282829 url("https://www.gfm.co.uk/wp-content/uploads/2017/11/footer@x2.jpg");
   background-size: cover;
   color: white;
   padding: 4rem 0;
@@ -9110,11 +9176,6 @@ p {
 }
 
 .btn-default:hover {
-  color: white;
-}
-
-.btn-ghost {
-  background: #FA9A14;
   color: white;
 }
 

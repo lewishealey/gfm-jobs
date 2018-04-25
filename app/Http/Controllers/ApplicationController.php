@@ -51,10 +51,20 @@ class ApplicationController extends Controller
         if($application->save()) {
           Mail::to("liam.barrett@gfm.co.uk")->send(new NewApplication($application));
           Mail::to($application->email)->send(new ApplicationConfirmation($application));
-          return redirect()->route('successful.application');
-        }
-        
+          return redirect()->route('successful.application', ['id' => $application->id]);
+        }   
 
+    }
+
+    /**
+     * Sucessful application
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function success(Request $request, $id)
+    {   
+        $application = Application::find($id);
+        return view('user.success', ['application' => $application]);
     }
 
     /**
@@ -114,6 +124,8 @@ class ApplicationController extends Controller
 
         // return view('admin.reject', ['application' => $application, 'response' => $response]);
     }
+
+
 
 
 }

@@ -1,7 +1,7 @@
 .header {
 	background: $fade;
 	z-index: 1;
-	position: fixed;
+	// position: fixed;
 	width: 100%;
 
 	@include phone-xs-up {
