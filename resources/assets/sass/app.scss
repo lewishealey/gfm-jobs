@@ -300,7 +300,7 @@ label {
 			}
 			
 			@include tablet-up {
-				margin: 6rem 0 0 0;
+				margin: 3rem 0 0 0;
 				line-height: 1;
 			}
 		}
@@ -353,6 +353,13 @@ label {
 					background: #117CB4;
 				}
 			}
+		}
+
+		&__thumbnail {
+			display: block;
+			margin: 3rem 0 0 0;
+			position: relative;
+			width: 100%;
 		}
 
 		&__apply {
@@ -570,4 +577,8 @@ label {
 .navbar-default {
 	padding: 1rem 0;
 	border: none;
+}
+
+.alert-default {
+	background-color: $body-bg;
 }

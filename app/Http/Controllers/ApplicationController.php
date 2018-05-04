@@ -114,11 +114,19 @@ class ApplicationController extends Controller
         $application->rejected = 1;
         $application->save();
 
+        // Get correct response - reject response that matches category
+        $response = DB::table('template')->where('category', $application->post->category)->where('type', 'reject')->first();
+        $date = Carbon::now()->format('l jS \\of F');
+
+        if($response) {
+            $response->contents = str_replace('*|NAME|*', $application->first_name . " " . $application->last_name, $response->contents); 
+            $response->contents = str_replace('*|JOB|*', $application->post->title, $response->contents);
+            $response->contents = str_replace('*|DATE|*', $date, $response->contents);
+        }
+
         $request->session()->flash('alert-danger', $application->first_name . ' has been rejected');
 
-        return redirect()->route('successful.application');
-        
-        return back()->withInput();
+        return view('admin.reject', ['application' => $application, 'response' => $response]);
 
         // $response = DB::table('template')->where('category', $application->post->category)->where('type', 'reject')->first();
 

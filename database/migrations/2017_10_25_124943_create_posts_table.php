@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('category')->nullable(); // Dropdown
             $table->string('brand')->default("GFM"); // Dropdown
             $table->string('attachment')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->string('location')->default("Colchester"); // Dropdown
             $table->text('description')->nullable(); 
         });

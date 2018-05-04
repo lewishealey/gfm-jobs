@@ -13,7 +13,15 @@
 			<p class="user__job__info"><i class="material-icons">business</i> {{$post->brand}}</p>
 			<p class="user__job__info"><i class="material-icons">location_on</i> {{$post->location}}</p>
 			<p class="user__job__info"><i class="material-icons">link</i>{{url("/job/{$post->slug}/{$post->id}")}}</p>
+		</div>
 
+		@if(isset($post->thumbnail))
+			<div class="col-md-5">
+				<img src="{{url('/')}}/storage/{{$post->thumbnail}}" class="user__job__thumbnail">
+			</div>
+		@endif
+
+		<div class="col-12 col-md-7">
 			<div class="user__job__description">
 				{!! $post->description !!}
 			</div>
@@ -84,8 +92,6 @@
 	            </form>
 	        </div>
 		</div>
-
-		<div class="user__job__visual"></div>
 
 	</div>
 

@@ -26,7 +26,7 @@
                   {!!$response->contents!!}
                 </textarea></p>
                 <p><input type="submit" class="btn btn-primary" value="Send acceptance email"> 
-                  <a href="{{url()->previous()}}" class="btn btn-default">Back to job</a>
+                    <a href="{{url()->previous()}}" class="btn">Back to job</a>
                 </p>
 
             </form>

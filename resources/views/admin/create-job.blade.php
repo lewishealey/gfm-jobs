@@ -40,7 +40,7 @@
                 </p>
                  <p><input type="text" name="location" class="form-control" value="{{ old('location') ? old('location') : "Colchester" }}" placeholder="Location"/></p>
                 <p><input type="file" name="attachment" class="form-control" value="{{ old('attachment') }}" placeholder="Attachment"/></p>
-
+                <p><input type="file" name="thumbnail" class="form-control" value="{{ old('thumbnail') }}" placeholder="Thumbnail"/></p>
                 <p><textarea name="description" class="form-control" value="{{ old('description') }}" placeholder="Job description" rows="10"></textarea></p>
 
                 <p><input type="submit" class="btn btn-default" value="Create job"></p>

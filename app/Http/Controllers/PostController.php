@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 use App\Post;
 
@@ -20,7 +21,8 @@ class PostController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'attachment' => 'max:2048|mimes:pdf,doc,docx'
+            'attachment' => 'max:2048|mimes:pdf,doc,docx',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:1024',
         ]);
 
         $post = new Post;
@@ -33,11 +35,17 @@ class PostController extends Controller
         $post->brand = $request->brand;
         $post->location = $request->location;
         $post->description = $request->description;
+
+        if ($request->hasFile('thumbnail')) {
+            $attachment = $request->file('thumbnail');
+            $path = $request->file('thumbnail')->store('files');
+            $post->thumbnail = $path;
+        }
         
         if (request()->hasFile('attachment')) {
-          $filename = $request->file('attachment')->getClientOriginalName();
-          Storage::put($filename, $request->file('attachment'));
-          $post->attachment = $filename;
+            $attachment = $request->file('attachment');
+            $path = $request->file('attachment')->store('files');
+            $post->attachment = $path;
         }
 
         if($post->save()) {
@@ -58,7 +66,8 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'salary' => 'required',
-            'attachment' => 'max:2048|mimes:pdf,doc,docx'
+            'attachment' => 'max:2048|mimes:pdf,doc,docx',
+            'thumbnail' => 'image|mimes:jpeg,png,jpg|max:1024',
         ]);
 
         $post = Post::find($request->id);
@@ -71,6 +80,12 @@ class PostController extends Controller
         $post->brand = $request->brand;
         $post->location = $request->location;
         $post->description = $request->description;
+
+        if ($request->hasFile('thumbnail')) {
+            $attachment = $request->file('thumbnail');
+            $path = $request->file('thumbnail')->store('files');
+            $post->thumbnail = $path;
+        }
         
         if (request()->hasFile('attachment')) {
             $attachment = $request->file('attachment');
