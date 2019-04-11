@@ -25,6 +25,7 @@ Route::post('/post/store', 'PostController@store')->name('store.post');
 Route::post('/post/update', 'PostController@update')->name('update.post');
 Route::get('/post/create', 'PostController@create')->name('create.post');
 Route::get('/post/edit/{id}', 'PostController@edit')->name('edit.post');
+Route::get('/post/delete/{id}', 'PostController@delete')->name('delete.post');
 Route::get('/post/{id}/applications', 'PostController@applications')->name('applications.post');
 
 Route::post('/response/store', 'ResponseController@store')->name('store.response');

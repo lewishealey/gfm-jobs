@@ -27,8 +27,8 @@
                 <tr>
                     <th>-</th>
                     <th>Name</th>
-                    <th>Download CV</th>
                     <th>Heard about us</th>
+                    <th>Download CV</th>
                     <th>Date/time</th>
                     <th>Status</th>
                 </tr>

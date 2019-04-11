@@ -122,6 +122,21 @@ class PostController extends Controller
         return view('admin.job', ['post' => $post]);
     }
 
+    /**
+     * Edit single post
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Request $request, $id)
+    {   
+        $post = Post::find($id);
+        $post->delete();
+        $posts = Post::all();
+        $request->session()->flash('alert-success', 'Job deleted');
+        
+        return view('admin.home', ['posts' => $posts]);
+    }
+
 
     /**
      * Show all applications of job

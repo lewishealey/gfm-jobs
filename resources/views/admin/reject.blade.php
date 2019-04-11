@@ -23,11 +23,12 @@
 
                 <p><input type="text" class="form-control" value="{{$application->email}}"></p>
                 <p><textarea name="description" class="form-control" placeholder="Job description" rows="10">
-                  {!!$response->contents!!}
+                  {!!$application->contents!!}
                 </textarea></p>
                 <p><input type="submit" class="btn btn-primary" value="Send acceptance email"> 
                     <a href="{{url()->previous()}}" class="btn">Back to job</a>
                 </p>
+                <input type="hidden" name="id" value="{{$application->id}}">
 
             </form>
         </div>

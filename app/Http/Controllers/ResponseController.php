@@ -35,6 +35,8 @@ class ResponseController extends Controller
 
         $application = Application::find($request->id);
 
+        var_dump($application);
+
         $response = new Response;
         $response->description = $request->description;
         $response->post_id = $application->post->id;
@@ -44,7 +46,7 @@ class ResponseController extends Controller
         $application->save();
 
         if($response->save()) {
-            Mail::to($request->email)->send(new PostResponse($response));
+            Mail::to($application->email)->send(new PostResponse($response));
             $request->session()->flash('alert-success', $application->first_name . ' application letter has been sent');
 
             return redirect()->route('applications.post',['id' => $application->post->id]);

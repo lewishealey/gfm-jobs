@@ -37,6 +37,14 @@
                     <option {{ ($post->category == "Customer Service" ? "selected":"") }} value="Customer Service">Customer service</option>
                     <option {{ ($post->category == "Management" ? "selected":"") }} value="Management">Management</option>
                     <option {{ ($post->category == "Design" ? "selected":"") }} value="Design">Design</option>
+                    <option {{ ($post->category == "Web Development" ? "selected":"") }} value="Web Development">Web Development</option>
+                    <option {{ ($post->category == "IT" ? "selected":"") }} value="IT">IT</option>
+                    <option {{ ($post->category == "Finance" ? "selected":"") }} value="Finance">Finance</option>
+                    <option {{ ($post->category == "HR" ? "selected":"") }} value="HR">HR</option>
+                    <option {{ ($post->category == "Learning & Development" ? "selected":"") }} value="Learning & Development">Learning & Development</option>
+                    <option {{ ($post->category == "Retentions" ? "selected":"") }} value="Retentions">Retentions</option>
+                    <option {{ ($post->category == "Reception" ? "selected":"") }} value="Reception">Reception</option>
+                    <option {{ ($post->category == "Client Services" ? "selected":"") }} value="Client Services">Client Services</option>
                 </select>
                 </p>
                 <p>
@@ -51,7 +59,8 @@
                  <label>Location</label>
                  <input type="text" name="location" class="form-control" value="{{ $post->location }}" placeholder="Location"/></p>
                 <p>
-                <label>Attachement</label><input type="file" name="attachment" class="form-control" placeholder="Attachment"/></p>
+                <label>Attachment</label>
+                <input type="file" name="attachment" class="form-control" placeholder="Attachment"/></p>
                 @if(isset($post->attachment))
                     <p class="alert alert-default"><a href="{{asset("storage/" . $post->attachment)}}" target="blank">View current file</a></p>
                 @endif
@@ -65,29 +74,49 @@
                 <label>Description</label>
                 <textarea name="description" class="form-control" placeholder="Job description" rows="10">{!!$post->description!!}</textarea></p>
                 <input type="hidden" value="{{$post->id}}" name="id">
-                <p><input type="submit" class="btn btn-default" value="Update"></p>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><input type="submit" class="btn btn-default" value="Update"></p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p><a href="/post/delete/{{$post->id}}" style="text-align:right; padding: 1.25rem; line-height: 1; border-radius: 0; text-transform: uppercase;" class="btn btn-danger confirm">Delete job</a></p>
+                    </div>
+                </div>
 
             </form>
+
         </div>
     </div>
 </div>
 
 <script src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
 <script>
 
-tinymce.init({
-  selector: 'textarea',
-  height: 500,
-  menubar: false,
-  plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table contextmenu paste code'
-  ],
-  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-  content_css: '//www.tinymce.com/css/codepen.min.css'
+
+$(function() {
+    $('.confirm').click(function() {
+        return window.confirm("Are you sure?");
+    });
+
+    tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code'
+        ],
+        toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        content_css: '//www.tinymce.com/css/codepen.min.css'
+    });
+
 });
 
 </script>

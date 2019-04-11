@@ -29,6 +29,14 @@
                     <option {{ (old('category') == "Customer Service" ? "selected":"") }} value="Customer Service">Customer service</option>
                     <option {{ (old('category') == "Management" ? "selected":"") }} value="Management">Management</option>
                     <option {{ (old('category') == "Design" ? "selected":"") }} value="Design">Design</option>
+                    <option {{ (old('category') == "Web Development" ? "selected":"") }} value="Web Development">Web Development</option>
+                    <option {{ (old('category') == "IT" ? "selected":"") }} value="IT">IT</option>
+                    <option {{ (old('category') == "Finance" ? "selected":"") }} value="Finance">Finance</option>
+                    <option {{ (old('category') == "HR" ? "selected":"") }} value="HR">HR</option>
+                    <option {{ (old('category') == "Learning & Development" ? "selected":"") }} value="Learning & Development">Learning & Development</option>
+                    <option {{ (old('category') == "Retentions" ? "selected":"") }} value="Retentions">Retentions</option>
+                    <option {{ (old('category') == "Reception" ? "selected":"") }} value="Reception">Reception</option>
+                    <option {{ (old('category') == "Client Services" ? "selected":"") }} value="Client Services">Client Services</option>
                 </select>
                 </p>
                 <p>
@@ -39,8 +47,9 @@
                     </select>
                 </p>
                  <p><input type="text" name="location" class="form-control" value="{{ old('location') ? old('location') : "Colchester" }}" placeholder="Location"/></p>
-                <p><input type="file" name="attachment" class="form-control" value="{{ old('attachment') }}" placeholder="Attachment"/></p>
-                <p><input type="file" name="thumbnail" class="form-control" value="{{ old('thumbnail') }}" placeholder="Thumbnail"/></p>
+                <p><label>PDF Attachment</label>
+                <input type="file" name="attachment" class="form-control" value="{{ old('attachment') }}" placeholder="Attachment"/></p>
+                <p><label>Thumbnail</label><input type="file" name="thumbnail" class="form-control" value="{{ old('thumbnail') }}" placeholder="Thumbnail"/></p>
                 <p><textarea name="description" class="form-control" value="{{ old('description') }}" placeholder="Job description" rows="10"></textarea></p>
 
                 <p><input type="submit" class="btn btn-default" value="Create job"></p>

@@ -1,0 +1,1 @@
+scp resources/views/admin/accept.blade.php resources/views/admin/applications.blade.php resources/views/admin/create-job.blade.php resources/views/admin/job.blade.php resources/views/admin/reject.blade.php lewis@jobs.gfm.co.uk:/var/www/html/gfm-jobs/resources/admin/

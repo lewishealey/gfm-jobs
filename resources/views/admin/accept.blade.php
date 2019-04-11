@@ -28,7 +28,7 @@
                     @endif
                 </textarea></p>
                 <p> 
-                    <input type="hidden" name="id" value={{$application->id}}>
+                    <input type="hidden" name="id" value="{{$application->id}}">
                     <input type="submit" class="btn btn-primary" value="Send acceptance email">
                     <a href="{{url()->previous()}}" class="btn">Back to job</a>
                 </p>
